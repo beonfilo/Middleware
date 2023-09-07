@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>MyBeon Middleware</Title>
+    <Company>Beon Filo</Company>
+    <Authors>İyibir Yazılım ve Teknoloji</Authors>
+    <Copyright>Copyright 2023 Allright Reserved</Copyright>
+  </PropertyGroup>
+
+</Project>
