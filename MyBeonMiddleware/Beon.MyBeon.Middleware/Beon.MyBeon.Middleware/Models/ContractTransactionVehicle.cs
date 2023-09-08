@@ -10,12 +10,12 @@ public class ContractTransactionVehicle : BaseModel
     public int LineNumber { get; set; } = default;
    // public ContractTransactionVehicleStatus _status;
    // public VehicleTollFeeStatus _tollFeeStatus;//hgs var/yok varsa beon öder, yoksa müşteri öder
-  //  public Vehicle? Vehicle{get; set;}
-    //public VehicleBrand? Brand{get; set;}
-    //public VehicleBrandModel? Model{get;set;}
-    //public VehicleBrandModelPackage? Package{get; set;}
-    //public VehicleBrandModelPackageYear? Year{get; set;}
-    //public GearType? GearType{get; set;}
+    public Vehicle? Vehicle{get; set;}
+    public VehicleBrand? Brand{get; set;}
+    public VehicleBrandModel? Model{get;set;}
+    public VehicleBrandModelPackage? Package{get; set;}
+    public VehicleBrandModelPackageYear? Year{get; set;}
+    public GearType? GearType{get; set;}
     //public OrderTransactionVehicle _orderTransactionVehicle;
     public DateTime InvoiceStartDate { get; set; }
     public DateTime InvoiceEndDate { get; set; }
