@@ -3,7 +3,6 @@ using Beon.MyBeon.Middleware.Services.BaseServices;
 
 namespace Beon.MyBeon.Middleware.Services;
 
-public interface ICustomerContactService : IRepository<CustomerContact>
+public interface IContractTransactionService : IRepository<ContractTransaction>
 {
 }
-

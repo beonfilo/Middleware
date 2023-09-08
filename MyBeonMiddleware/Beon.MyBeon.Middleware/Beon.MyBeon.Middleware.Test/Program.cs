@@ -10,8 +10,13 @@ using IHost host = Host.CreateDefaultBuilder(args)
         //services.AddSingleton<IHttpClientFactory>();
         services.AddTransient<IAuthenticationService,AuthenticationDataStore>();
         services.AddTransient<ICustomerService,CustomerDataStore>();
-
-
+        services.AddTransient<IContractService, ContractDataStore>();
+        services.AddTransient<IContractTransactionService, ContractTransactionDataStore>();
+        services.AddTransient<IContractTransactionVehicleService, ContractTransactionVehicleDataStore>();
+        services.AddTransient<ICountyService, CountyDataStore>();
+        services.AddTransient<ICustomerContactService,CustomerContactDataStore>();
+        services.AddTransient<IDepartmentService, DepartmentDataStore>();
+        services.AddTransient<IPositionService, PositionDataStore>();
 
     })
     .Build();

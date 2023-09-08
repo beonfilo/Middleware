@@ -4,6 +4,6 @@ using Beon.MyBeon.Middleware.Services;
 
 namespace Beon.MyBeon.Middleware.DataStores;
 
-public class CustomerContactDataStore : BaseDataStore<CustomerContact>, ICustomerContactService
+public class ContractDataStore : BaseDataStore<Contract>,IContractService
 {
 }
