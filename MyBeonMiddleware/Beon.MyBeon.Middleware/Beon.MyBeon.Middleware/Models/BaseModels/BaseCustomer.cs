@@ -9,8 +9,8 @@ namespace Beon.MyBeon.Middleware.Models.BaseModels
         public string Title { get; set; } = string.Empty;
         public string TaxOffice { get; set; } = string.Empty;
         public string TaxNumber { get; set; } = string.Empty;
-        //public Country? Country { get; set; }
-        //public City? City { get; set; }
+        public Country? Country { get; set; }
+        public City? City { get; set; }
         public County? County { get; set; }
         public Currency? Currency { get; set; }
         public string PostCode { get; set; } = string.Empty;

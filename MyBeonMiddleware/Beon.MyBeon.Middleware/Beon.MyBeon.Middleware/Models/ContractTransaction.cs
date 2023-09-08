@@ -9,10 +9,9 @@ public class ContractTransaction : BaseModel
     public Contract? Contract { get; set; }
     public Customer? Customer { get; set; }
     public int LineNumber { get; set; } = default;
-
-    //public VehicleBrand? Brand{ get; set; }
-    //public VehicleBrandModel? Brand{ get; set; }
-    //public VehicleBrandModelPackage? Brand{ get; set; }
+    public VehicleBrand? Brand{ get; set; }
+    public VehicleBrandModel? Brand{ get; set; }
+    public VehicleBrandModelPackage? Brand{ get; set; }
     public double Quantity { get; set; } = default;
     public double UnitPrice { get; set; } = default;
     public double Kilometer { get; set; } = default;
