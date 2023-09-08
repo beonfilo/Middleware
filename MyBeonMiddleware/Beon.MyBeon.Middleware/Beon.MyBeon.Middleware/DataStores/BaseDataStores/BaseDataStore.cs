@@ -9,13 +9,8 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
 {
     public class BaseDataStore<T> : IRepository<T> where T : class
     {
-        private const string PostUrl = "/api/odata/" + nameof(T);
+        private string PostUrl = "/api/odata/" + typeof(T).Name;
         public async Task<DataResult<T>> DeleteObject(HttpClient httpClient, T item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<DataResult<T>> FindObject(HttpClient httpClient, string query)
         {
             throw new NotImplementedException();
         }
@@ -34,6 +29,7 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             {
                 var json = await response.Content.ReadAsStringAsync();
                 var data = JsonNode.Parse(json)["value"].Deserialize<IEnumerable<T>>();
+
                 result.IsSuccess = true;
                 result.Message = "Success";
                 result.Data = data;
