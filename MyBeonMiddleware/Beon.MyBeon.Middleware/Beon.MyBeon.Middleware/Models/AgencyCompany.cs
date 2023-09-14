@@ -1,6 +1,7 @@
-﻿namespace Beon.MyBeon.Middleware.Models
+
+﻿namespace Beon.MyBeon.Middleware.Models;
+
+public class AgencyCompany : Supplier
 {
-	public class AgencyCompany : Supplier
-	{
-	}
 }
+

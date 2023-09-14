@@ -4,6 +4,6 @@ using Beon.MyBeon.Middleware.Services;
 
 namespace Beon.MyBeon.Middleware.DataStores;
 
-public class AgencyCompanyDataStore : BaseDataStore<AgencyCompany>,IAgencyCompanyService
+public class InsurancePolicyDataStore : BaseDataStore<InsurancePolicy>,IInsurancePolicyService
 {
 }
