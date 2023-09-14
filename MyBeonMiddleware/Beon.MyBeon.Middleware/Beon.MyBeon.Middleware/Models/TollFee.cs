@@ -10,11 +10,14 @@ public class TollFee : BaseFollowUpTransaction
     public City? EntryCity { get; set; }
     public TollPoint? EntryTollPoint { get; set; }
     public TollPoint? ExitTollPoint { get; set; }
-    public City? ExitCity { get; set; }
+	public string EntryTollPointDesc { get; set; } = string.Empty;
+	public string ExitTollPointDesc { get; set; } = string.Empty;
+	public City? ExitCity { get; set; }
     public DateTime EntryDate { get; set; }
     public DateTime ExitDate{ get; set; }
     public Roadway? Roadway { get; set; }
-    //public TollFeeInvoicePool _tollFeeInvoicePool;
-    public DateTime ToolFeeRegistrationDate { get; set; }
+	private string RoadWayDesc { get; set; } = string.Empty;
+	//public TollFeeInvoicePool _tollFeeInvoicePool;
+	public DateTime ToolFeeRegistrationDate { get; set; }
     public DateTime TerviceRegistrationDate { get; set; }
 }
