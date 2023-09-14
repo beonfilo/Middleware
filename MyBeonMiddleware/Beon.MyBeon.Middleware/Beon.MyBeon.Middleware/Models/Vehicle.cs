@@ -7,7 +7,8 @@ namespace Beon.MyBeon.Middleware.Models
         //public IntegrationResult _integrationResult;
         //public CardType _cardType;
         public string Code { get; set; } = string.Empty;
-        public int Vat { get; set; } = default;
+		public string Name { get; set; } = string.Empty;
+		public int Vat { get; set; } = default;
         public Unitset? Unitset { get; set; } 
         public bool IsActive { get; set; } = default;
         public int ReferenceId { get; set; } = default;
