@@ -2,7 +2,7 @@
 
 namespace Beon.MyBeon.Middleware.Models
 {
-    public class VehicleBrandModel : BaseModel
+    public class VehicleBrandModel : VehicleCatalog
     {
         public VehicleBrand? Brand { get; set; } 
         public BrandType? BrandType { get; set; } 
