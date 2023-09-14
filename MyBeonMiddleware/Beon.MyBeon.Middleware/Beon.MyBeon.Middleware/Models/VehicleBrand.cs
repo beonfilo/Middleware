@@ -6,7 +6,8 @@ namespace Beon.MyBeon.Middleware.Models
     {
         public byte[]? BrandImage { get; set; }
         public string Code { get; set; } = string.Empty;
-        public BrandType? BrandType { get; set; }
+		public string Name { get; set; } = string.Empty;
+		public BrandType? BrandType { get; set; }
         public string History { get; set; } = string.Empty;
         public string CustomerService { get; set; } = string.Empty;
         public DateTime EstablishmentDate { get; set; } = DateTime.Now;
