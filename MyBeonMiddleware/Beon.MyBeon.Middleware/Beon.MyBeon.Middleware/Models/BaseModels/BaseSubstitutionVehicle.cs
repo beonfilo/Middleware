@@ -1,6 +1,6 @@
 ﻿namespace Beon.MyBeon.Middleware.Models.BaseModels
 {
-	public class BaseSubstitutionVehicle : BaseModel
+    public class BaseSubstitutionVehicle : BaseModel
 	{
 		public string Status { get; set; } = string.Empty;
 		public string SubstitutionType { get; set; } = string.Empty;
