@@ -16,7 +16,7 @@ public class TollFee : BaseFollowUpTransaction
     public DateTime EntryDate { get; set; }
     public DateTime ExitDate{ get; set; }
     public Roadway? Roadway { get; set; }
-	private string RoadWayDesc { get; set; } = string.Empty;
+	public string RoadWayDesc { get; set; } = string.Empty;
 	//public TollFeeInvoicePool _tollFeeInvoicePool;
 	public DateTime ToolFeeRegistrationDate { get; set; }
     public DateTime TerviceRegistrationDate { get; set; }

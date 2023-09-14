@@ -12,7 +12,7 @@ namespace Beon.MyBeon.Middleware.Models
         public Unitset? Unitset { get; set; } 
         public bool IsActive { get; set; } = default;
         public int ReferenceId { get; set; } = default;
-        //public VehicleStatus _status;
+        public string VehicleStatus { get; set; } = string.Empty;
         public byte[]? VehicleImage { get; set; }
         public VehiclePlate? Plate { get; set; }
         public VehicleBrand? Brand { get; set; }
@@ -34,23 +34,20 @@ namespace Beon.MyBeon.Middleware.Models
         public DateTime LastRegistrationDate { get; set; } = DateTime.Now;
         public string RegistrationNumber = string.Empty;
         #endregion
-
         public DateTime InspectionDate { get; set; } = DateTime.Now; //muayene 
         public DateTime PolicyExpiryDate { get; set; } = DateTime.Now; // sigorta
         public DateTime InsurancePolicyExpiryDate { get; set; } = DateTime.Now; //kasko
         public double InsurancePolicyPrice { get; set; } = default;
-
         public bool IsVehiclePledge { get; set; } = default; // rehin
         public Bank? Bank { get; set; }
-        //public LeasingCompany? LeasingCompany { get; set; }
+        public LeasingCompany? LeasingCompany { get; set; }
         public string BankCreditNumber = string.Empty;
         public int BankCreditReferenceId { get; set; } = default;
         public DateTime BankCreditStartOn { get; set; } = DateTime.Now;
         public int BankCreditMaturity { get; set; } = default;
         public DateTime BankCreditEndOn { get; set; } = DateTime.Now;
-
         public bool IsResevation { get; set; } = default;
-        //public VehicleReservationType? _reservationType { get; set; }
+        public string VehicleReservationType { get; set; } = string.Empty;//(enum)
         public bool IsLead { get; set; } = default;
         public Customer? ReservationCustomer { get; set; }
         //public Lead? ReservationLead { get; set; } 
@@ -64,22 +61,17 @@ namespace Beon.MyBeon.Middleware.Models
         public double RealNetTotal { get; set; } = default;
         public double LastMaintenanceKilometer { get; set; } = default; //son bakım KM
         public DateTime LastMaintenanceDate { get; set; } = DateTime.Now; //son bakım tarihi
-
         //public Dealer? Dealer { get; set; } = default;
         //public StockLocation? StockLocation { get; set; }
 
         //public VehicleUsageType? UsageType { get; set; }
         //public FileData KDocument;//K Belgesi Ticari araçlar için zorunlu
-
-        //public VehicleTollFeeStatus? TollFeeStatus { get; set; } //hgsyi kim öder var:BEONi yok: Müşteri
-
+        public string VehicleTollFeeStatus { get; set; } = string.Empty;//hgsyi kim öder var:BEONi yok: Müşteri (Enum)
         public bool IsMarketable { get; set; } = default;//satılabilir
         public bool IsRentable { get; set; } = default;//kiralanabilir
         public bool IsPoolKilometer { get; set; } = default;
-
-
         public int SalesInvoiceReferenceId { get; set; } = default;
-        //public ContractTransactionVehicle? _contractTransactionVehicle { get; set; } 
+        public ContractTransactionVehicle? ContractTransactionVehicle { get; set; } 
         public DateTime CertificatefOfAuthExpiryDate { get; set; } = DateTime.Now;
         //public VehiclePurchaseOrderLine? _vehiclePurchaseOrderLine { get; set; } 
     }
