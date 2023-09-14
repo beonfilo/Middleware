@@ -1,9 +1,10 @@
 ﻿using Beon.MyBeon.Middleware.DataStores.BaseDataStores;
 using Beon.MyBeon.Middleware.Models;
 
+using Beon.MyBeon.Middleware.Services;
 namespace Beon.MyBeon.Middleware.DataStores
 {
-	public class CounterInsuranceCompanyDataStore : BaseDataStore<CounterInsuranceCompany>
+	public class CounterInsuranceCompanyDataStore : BaseDataStore<CounterInsuranceCompany>, ICounterInsuranceCompanyService
 	{
 	}
 }
