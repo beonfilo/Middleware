@@ -20,7 +20,7 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             throw new NotImplementedException();
         }
 
-        public async Task<DataResult<IEnumerable<T>>> GetObjects(HttpClient httpClient, string query = "" )
+        public async Task<DataResult<IEnumerable<T>>> GetObjects(HttpClient httpClient, string query = "")
         {
             DataResult<IEnumerable<T>> result = new DataResult<IEnumerable<T>>();
 
@@ -30,7 +30,9 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
                 var json = await response.Content.ReadAsStringAsync();
                 if (!string.IsNullOrEmpty(json))
                 {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     var data = JsonNode.Parse(json)["value"].Deserialize<IEnumerable<T>>();
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
                     result.IsSuccess = true;
                     result.Message = "Success";
@@ -65,7 +67,9 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
                 var json = await response.Content.ReadAsStringAsync();
                 if (!string.IsNullOrEmpty(json))
                 {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     var data = JsonNode.Parse(json)["value"].Deserialize<T>();
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
                     result.IsSuccess = true;
                     result.Message = "Success";
                     result.Data = data;
