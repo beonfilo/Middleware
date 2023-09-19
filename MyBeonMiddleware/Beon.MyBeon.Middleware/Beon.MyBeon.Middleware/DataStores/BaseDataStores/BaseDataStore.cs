@@ -20,7 +20,7 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             throw new NotImplementedException();
         }
 
-        public async Task<DataResult<IEnumerable<T>>> GetObjects(HttpClient httpClient, string query = null)
+        public async Task<DataResult<IEnumerable<T>>> GetObjects(HttpClient httpClient, string query = "" )
         {
             DataResult<IEnumerable<T>> result = new DataResult<IEnumerable<T>>();
 
@@ -28,11 +28,20 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                var data = JsonNode.Parse(json)["value"].Deserialize<IEnumerable<T>>();
+                if (!string.IsNullOrEmpty(json))
+                {
+                    var data = JsonNode.Parse(json)["value"].Deserialize<IEnumerable<T>>();
 
-                result.IsSuccess = true;
-                result.Message = "Success";
-                result.Data = data;
+                    result.IsSuccess = true;
+                    result.Message = "Success";
+                    result.Data = data;
+                }
+                else
+                {
+                    result.IsSuccess = false;
+                    result.Data = null;
+                    result.Message = "Empty Data";
+                }
             }
             else
             {
@@ -54,7 +63,7 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                if (string.IsNullOrEmpty(json))
+                if (!string.IsNullOrEmpty(json))
                 {
                     var data = JsonNode.Parse(json)["value"].Deserialize<T>();
                     result.IsSuccess = true;
