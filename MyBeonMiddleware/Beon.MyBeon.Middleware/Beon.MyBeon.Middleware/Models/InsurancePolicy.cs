@@ -4,7 +4,7 @@ namespace Beon.MyBeon.Middleware.Models;
 
 public class InsurancePolicy : BaseModel
 {
-	public string InsurancePolicyStatus { get; set; } = string.Empty; //Enum
+	public string Status { get; set; } = string.Empty; //Enum
 	public DateTime CreatedOn { get; set; }
 	//public ApplicationUser _owner;
 	public LeasingCompany? NameOfInsured { get; set; }//sigortalı adı
