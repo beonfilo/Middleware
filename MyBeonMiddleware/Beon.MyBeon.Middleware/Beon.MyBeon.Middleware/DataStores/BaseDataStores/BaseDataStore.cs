@@ -92,11 +92,11 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             return await Task.FromResult(result);
         }
 
-        public async Task<DataResult<T>> UpdateObject(HttpClient httpClient, T item)
+        public async Task<DataResult<T>> UpdateObject(HttpClient httpClient, T item, Guid oid)
         {
             DataResult<T> result = new DataResult<T>();
 
-            var response = await httpClient.PatchAsync(PostUrl, new StringContent(JsonSerializer.Serialize(item), encoding: Encoding.UTF8, mediaType: "application/json"));
+            var response = await httpClient.PatchAsync(requestUri: $"{PostUrl}/{oid.ToString()}", content: new StringContent(JsonSerializer.Serialize(item), encoding: Encoding.UTF8, mediaType: "application/json"));
 
             if (response.IsSuccessStatusCode)
             {
