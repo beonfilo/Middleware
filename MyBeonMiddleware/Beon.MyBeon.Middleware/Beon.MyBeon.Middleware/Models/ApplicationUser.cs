@@ -16,4 +16,6 @@ public class ApplicationUser : BaseModel
     public bool IsActive { get; set; }
     public string UserName { get; set; } = string.Empty;
     public string StoredPassword { get; set; } = string.Empty;
+    public Customer? Customer { get; set; }
+    public CustomerContact? CustomerContact { get; set; }
 }
