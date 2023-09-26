@@ -11,6 +11,8 @@ public class ProtocolApprove : BaseModel
     public DateTime CreatedOn { get; set; } = default;
     public DateTime ProtocolOn { get; set; } = default;
     public ApplicationUser? Owner { get; set; }
+    public Customer? DevirCustomer { get; set; }
+    public CustomerContact? DevirCustomerContact { get; set; }
     public FileData? DevirProtocolDocument { get; set; }
     public ReasonForRejectionProtocolApprove? ReasonForRejection { get; set; }
     public DateTime RejectionOn { get; set; } = default;
