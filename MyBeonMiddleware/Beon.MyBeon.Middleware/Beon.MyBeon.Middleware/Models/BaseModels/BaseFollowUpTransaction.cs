@@ -15,7 +15,7 @@ public class BaseFollowUpTransaction : BaseModel
     public Customer? Customer { get; set; }
     public CustomerContact? CustomerContact { get; set; }
     public double Total { get; set; } = default;
-    //public ChargeoutStatus _chargeoutStatus;
+    public string ChargeoutStatus { get; set; } = string.Empty;
     public double ChargeoutPrice { get; set; }
     //public FileData _chargeoutDocumentData;//yanıtma Belgesi 
     public string Description { get; set; } = string.Empty;
