@@ -32,6 +32,6 @@ namespace Beon.MyBeon.Middleware.Models.BaseModels
         public string TCKN { get; set; } = string.Empty;
         public Currency? CurrencyToBeValued { get; set; }
         //private PaymentPlan _paymentPlan;
-        private BaseCustomer? ParentBaseCustomer { get; set; }
+        public BaseCustomer? ParentBaseCustomer { get; set; }
     }
 }

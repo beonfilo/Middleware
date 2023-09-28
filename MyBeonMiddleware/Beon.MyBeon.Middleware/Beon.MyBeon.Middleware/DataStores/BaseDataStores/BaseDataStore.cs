@@ -1,9 +1,8 @@
-﻿using Beon.MyBeon.Middleware.Models;
-using Beon.MyBeon.Middleware.Models.ResultModels;
+﻿using Beon.MyBeon.Middleware.Models.ResultModels;
 using Beon.MyBeon.Middleware.Services.BaseServices;
-using System.Text.Json.Nodes;
-using System.Text.Json;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
 {
@@ -87,11 +86,59 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             return await Task.FromResult(result);
         }
 
-        public async Task<DataResult<T>> UpdateObject(HttpClient httpClient, T item)
+        /// <summary>
+        /// Tüm alanların güncellenmesini sağlar
+        /// </summary>
+        /// <param name="httpClient"></param>
+        /// <param name="item"></param>
+        /// <param name="oid"></param>
+        /// <returns></returns>
+        public async Task<DataResult<T>> PutObject(HttpClient httpClient, T item, Guid oid)
         {
             DataResult<T> result = new DataResult<T>();
 
-            var response = await httpClient.PatchAsync(PostUrl, new StringContent(JsonSerializer.Serialize(item), encoding: Encoding.UTF8, mediaType: "application/json"));
+            var response = await httpClient.PutAsync(requestUri: $"{PostUrl}/{oid.ToString()}", content: new StringContent(JsonSerializer.Serialize(item), encoding: Encoding.UTF8, mediaType: "application/json"));
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                if (string.IsNullOrEmpty(json))
+                {
+                    var data = JsonNode.Parse(json)["value"].Deserialize<T>();
+                    result.IsSuccess = true;
+                    result.Message = "Success";
+                    result.Data = data;
+                }
+                else
+                {
+                    result.IsSuccess = false;
+                    result.Data = null;
+                    result.Message = "Empty Data";
+                }
+
+            }
+            else
+            {
+                result.IsSuccess = false;
+                result.Data = null;
+                result.Message = await response.Content.ReadAsStringAsync();
+            }
+
+            return await Task.FromResult(result);
+        }
+
+        /// <summary>
+        /// Sadece belirli alanların güncellenmesini sağlar
+        /// </summary>
+        /// <param name="httpClient"></param>
+        /// <param name="item"></param>
+        /// <param name="oid"></param>
+        /// <returns></returns>
+        public async Task<DataResult<T>> PatchObject(HttpClient httpClient, object item, Guid oid)
+        {
+            DataResult<T> result = new DataResult<T>();
+
+            var response = await httpClient.PatchAsync(requestUri: $"{PostUrl}/{oid.ToString()}", content: new StringContent(JsonSerializer.Serialize(item), encoding: Encoding.UTF8, mediaType: "application/json"));
 
             if (response.IsSuccessStatusCode)
             {
