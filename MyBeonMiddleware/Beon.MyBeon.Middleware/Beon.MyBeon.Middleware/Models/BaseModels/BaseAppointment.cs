@@ -17,13 +17,13 @@
 		public Customer? Customer { get; set; }
 		public CustomerContact? customerContact { get; set; }
 		public AppointmentRejectReason? RejectReason { get; set; }
-		public DateTime StatusChangeDate { get; set; } = DateTime.Now;
+		public DateTime? StatusChangeDate { get; set; }
 		//public ApplicationUser _statusChanger;
 		public string StatusDescription { get; set; } = string.Empty;
 
 		public ReasonForRejection? ReasonForRejection { get; set; }
 		public string RejectionDescription { get; set; } = string.Empty;
-		public DateTime RejectionOn { get; set; } = DateTime.Now;
+		public DateTime? RejectionOn { get; set; }
 		//public ApplicationUser _rejectionOwner;
 
 		#region Logo Transfer İşlem Bilgileri

@@ -3,10 +3,10 @@
 public class BaseFollowUpTransaction : BaseModel
 {
     public string TransactionType { get; set; } = string.Empty;
-    public DateTime CreatedOn { get; set; }
-    //public ApplicationUser? Owner{ get; set; }
+    public DateTime? CreatedOn { get; set; }
+    public ApplicationUser? Owner{ get; set; }
     public string Code { get; set; } = string.Empty;
-    public DateTime TransactionOn { get; set; }
+    public DateTime? TransactionOn { get; set; }
     public Vehicle? Vehicle { get; set; }
    // public SalesServiceCard _salesServiceCard;
     public Contract? Contract { get; set; } //sözleşme
@@ -19,6 +19,6 @@ public class BaseFollowUpTransaction : BaseModel
     public double ChargeoutPrice { get; set; }
     //public FileData _chargeoutDocumentData;//yanıtma Belgesi 
     public string Description { get; set; } = string.Empty;
-    //public BaseInvoicePool BaseInvoicePool;
-    public DateTime ChargeoutOn { get; set; }
+    public BaseInvoicePool? BaseInvoicePool { get; set; }
+	public DateTime? ChargeoutOn { get; set; }
 }

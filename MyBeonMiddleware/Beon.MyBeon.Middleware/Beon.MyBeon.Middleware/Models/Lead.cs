@@ -22,9 +22,9 @@ namespace Beon.MyBeon.Middleware.Models
         public string EMail { get; set; } = string.Empty;
         public string WebAddress { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
-        public bool IsActive;
-        public bool IsPersonal;
-        public string FirstName { get; set; } = string.Empty;
+        public bool IsActive { get; set; }
+		public bool IsPersonal { get; set; }
+		public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string Tckn { get; set; } = string.Empty;
         public LeadSource? LeadSource { get; set; }

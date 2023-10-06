@@ -8,8 +8,8 @@ namespace Beon.MyBeon.Middleware.Models;
 
 public class Division
 {
-    public int Number { get; set; }
-    public string Name { get; set; }
-    public  int  ReferenceId{ get; set; }
-    public IntegrationResult  IntegrationResult { get; set; }
+    public int Number { get; set; } = default;
+    public string Name { get; set; } = string.Empty;
+    public int ReferenceId { get; set; } = default;
+    public IntegrationResult?  IntegrationResult { get; set; }
 }

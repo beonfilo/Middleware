@@ -4,13 +4,13 @@ namespace Beon.MyBeon.Middleware.Models;
 
 public class ConnectionParameter
 {
-    public string ConnectionString { get; set; }
-    public  string ServerName { get; set; }
-    public string  UserId { get; set; }
-    public string Password { get; set; }
-    public string  InitialCatalog { get; set; }
+    public string ConnectionString { get; set; } = string.Empty;
+    public string ServerName { get; set; } = string.Empty;
+    public string UserId { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
+    public string InitialCatalog { get; set; } = string.Empty;
     public int DefaultFirmNumber { get; set; }
     public int DefaultPeriodNumber { get; set; }
-    public BaseCustomer DefaultCustomer { get; set; }
+    public BaseCustomer? DefaultCustomer { get; set; }
     public  bool IsActive { get; set; }
 }

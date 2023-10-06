@@ -4,7 +4,7 @@
 	{
 		public string DemandType { get; set; } = string.Empty;
 		public string Status { get; set; } = string.Empty;
-		public DateTime CreatedOn { get; set; } = DateTime.Now;
+		public DateTime? CreatedOn { get; set; }
 		//public ApplicationUser _owner;
 		public BaseAppointment? BaseAppointment { get; set; }
 		public BaseProforma? BaseProforma { get; set; }
@@ -25,7 +25,7 @@
 
 		public ReasonForRejection? ReasonForRejection { get; set; }
 		public string RejectionDescription { get; set; } = string.Empty;
-		public DateTime RejectionOn { get; set; } = DateTime.Now;
+		public DateTime? RejectionOn { get; set; }
 		//public ApplicationUser _rejectionOwner;
 	}
 }
