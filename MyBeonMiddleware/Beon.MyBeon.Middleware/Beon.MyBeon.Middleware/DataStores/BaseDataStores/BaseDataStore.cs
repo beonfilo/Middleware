@@ -173,10 +173,9 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
                 var json = await response.Content.ReadAsStringAsync();
                 if (string.IsNullOrEmpty(json))
                 {
-                    var data = JsonNode.Parse(json)["value"].Deserialize<T>();
                     result.IsSuccess = true;
                     result.Message = "Success";
-                    result.Data = data;
+                    result.Data = null;
                 }
                 else
                 {
