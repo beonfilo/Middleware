@@ -2,7 +2,7 @@
 
 public class BreakdownType
 {
-    public  BreakdownType  BreakdownLocation { get; set; }
-    public BreakdownType Session { get; set; }
+    public  BreakdownType?  BreakdownLocation { get; set; }
+    public BreakdownType? Session { get; set; }
 
 }

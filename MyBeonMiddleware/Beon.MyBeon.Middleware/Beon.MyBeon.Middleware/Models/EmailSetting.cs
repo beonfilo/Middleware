@@ -2,11 +2,11 @@
 
 public class EmailSetting
 {
-    public string Name { get; set; }
-    public string FromMailAddress{ get; set; }
-    public string  FromMailAddressPassword{ get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string FromMailAddress { get; set; } = string.Empty;
+    public string FromMailAddressPassword { get; set; } = string.Empty;
     public int Port{ get; set; }
     public bool UseSSL { get; set; }
-    public string SmtpAddress { get; set; }
+    public string SmtpAddress { get; set; } = string.Empty;
     public bool IsActive { get; set; }
 }

@@ -16,8 +16,36 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
 
         public async Task<DataResult<T>> GetObject(HttpClient httpClient, Guid Oid)
         {
-            throw new NotImplementedException();
-        }
+			DataResult<T> result = new DataResult<T>();
+
+			var response = await httpClient.GetAsync($"{PostUrl}({Oid.ToString()})");
+			if (response.IsSuccessStatusCode)
+			{
+				var json = await response.Content.ReadAsStringAsync();
+				if (!string.IsNullOrEmpty(json))
+				{
+					var data = JsonNode.Parse(json).Deserialize<T>();
+					result.IsSuccess = true;
+					result.Message = "Success";
+					result.Data = data;
+				}
+				else
+				{
+					result.IsSuccess = false;
+					result.Data = null;
+					result.Message = "Empty Data";
+				}
+			}
+			else
+			{
+				result.IsSuccess = false;
+				result.Data = null;
+				result.Message = await response.Content.ReadAsStringAsync();
+			}
+
+
+			return await Task.FromResult(result);
+		}
 
         public async Task<DataResult<IEnumerable<T>>> GetObjects(HttpClient httpClient, string query = "")
         {

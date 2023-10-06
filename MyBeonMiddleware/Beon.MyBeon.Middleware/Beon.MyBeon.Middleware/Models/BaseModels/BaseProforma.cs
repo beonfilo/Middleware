@@ -3,14 +3,14 @@
 	public class BaseProforma : BaseModel
 	{
 	
-		public DateTime CreatedOn { get; set; } = DateTime.Now;
+		public DateTime? CreatedOn { get; set; }
 		//public ApplicationUser _owner;
 		public string BaseProformaModuleType { get; set; } = string.Empty;
 		public string ProformaType { get; set; } = string.Empty;
 		public string Status { get; set; } = string.Empty;
 		public ProformaRevision? ProformaRevision { get; set; }
 		public string ProformaNumber { get; set; } = string.Empty;
-		public DateTime ProformaDate { get; set; } = DateTime.Now;
+		public DateTime? ProformaDate { get; set; }
 		public Vehicle? Vehicle { get; set; }
 		public BaseCustomer? BaseCustomer { get; set; }
 		public PaymentPlan? PaymentPlan { get; set; }
@@ -28,12 +28,12 @@
 
 		#region Red Bilgileri
 		public ReasonForRejection? ReasonForRejection { get; set; }
-		public DateTime RejectedDate { get; set; } = DateTime.Now;
+		public DateTime? RejectedDate { get; set; }
 		//public ApplicationUser _rejectedBy;
 		#endregion
 
 		#region Onay ve Sipariş Bilgileri
-		public DateTime ApproveDate { get; set; } = DateTime.Now;
+		public DateTime? ApproveDate { get; set; }
 		//public ApplicationUser _approvedBy;
 		public int OrderReferenceId { get; set; } = default;
 		public string OrderFicheNumber { get; set; } = string.Empty;
