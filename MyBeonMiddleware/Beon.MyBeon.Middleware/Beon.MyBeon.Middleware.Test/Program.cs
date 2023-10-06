@@ -34,13 +34,14 @@ static async void ExemplifyServiceLifetime(IServiceProvider hostProvider)
     ICustomerService customerService = provider.GetRequiredService<ICustomerService>();
 
     var httpClient =new HttpClient();
-    httpClient.BaseAddress = new Uri("http://5.250.254.202:1196");
+    httpClient.BaseAddress = new Uri("http://10.130.145.11:1189");
 
     var result = await authenticationService.Authenticate(httpClient, "Admin", "1673");
     if (result.IsSuccess)
     {
+        Guid id = new Guid("f6c53ae1-599e-4211-8e0a-41b23e795c5d");
         httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", result.Data.Token);
-        var customer = await customerService.GetObjects(httpClient);
+        var customer = await customerService.GetObject(httpClient, id);
     }
    
 
