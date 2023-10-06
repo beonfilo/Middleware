@@ -2,7 +2,7 @@
 
 public class BaseFollowUpTransaction : BaseModel
 {
-    //public BaseFollowUpTransactionType TransactionType;
+    public string TransactionType { get; set; } = string.Empty;
     public DateTime CreatedOn { get; set; }
     //public ApplicationUser? Owner{ get; set; }
     public string Code { get; set; } = string.Empty;
