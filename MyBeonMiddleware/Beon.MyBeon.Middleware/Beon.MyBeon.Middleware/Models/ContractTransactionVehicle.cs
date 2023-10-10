@@ -8,7 +8,7 @@ public class ContractTransactionVehicle : BaseModel
     public string Code { get; set; } = string.Empty;
     public ContractTransaction? ContractTransaction { get; set; }
     public int LineNumber { get; set; } = default;
-   // public ContractTransactionVehicleStatus _status;
+    public string Status { get; set; }=string.Empty;
    // public VehicleTollFeeStatus _tollFeeStatus;//hgs var/yok varsa beon öder, yoksa müşteri öder
     public Vehicle? Vehicle{get; set;}
     public VehicleBrand? Brand{get; set;}
