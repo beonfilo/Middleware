@@ -15,8 +15,8 @@ namespace Beon.MyBeon.Middleware.Models
 		public Vehicle? Vehicle { get; set; }
 		public Customer? Customer { get; set; }
 		public string PolicyNumber { get; set; } = string.Empty;
-		public DateTime StartDate { get; set; } = DateTime.Now;
-		public DateTime EndDate { get; set; } = DateTime.Now;
+		public DateTime? StartDate { get; set; }
+		public DateTime? EndDate { get; set; }
 		public InsuranceCompany? InsuranceCompany { get; set; }
 		public double Total { get; set; }
 		public string PolicyDocumentData { get; set; } = string.Empty;//ana poliçe
@@ -26,7 +26,7 @@ namespace Beon.MyBeon.Middleware.Models
 		public int RecoveryCount { get; set; } = default;
 		public int EsedRecoveryCount { get; set; } = default;
 		public double ExemptionTotal { get; set; } = default;
-		public DateTime CancelledOn { get; set; } = DateTime.Now;
+		public DateTime? CancelledOn { get; set; }
 		//public ApplicationUser _cancelledBy;
 
 	}

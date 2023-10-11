@@ -10,7 +10,7 @@ namespace Beon.MyBeon.Middleware.Models
 		public BrandType? BrandType { get; set; }
         public string History { get; set; } = string.Empty;
         public string CustomerService { get; set; } = string.Empty;
-        public DateTime EstablishmentDate { get; set; } = DateTime.Now;
+        public DateTime? EstablishmentDate { get; set; }
         public string WebAddress { get; set; } = string.Empty;
         public bool IsActive { get; set; } = default;
 

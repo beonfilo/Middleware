@@ -4,7 +4,7 @@
 	{
 		public string Status { get; set; } = string.Empty;
 		public string SubstitutionType { get; set; } = string.Empty;
-		public DateTime CreatedOn { get; set; } = DateTime.Now;
+		public DateTime? CreatedOn { get; set; }
 		//public ApplicationUser _owner;
 		public string Code { get; set; } = string.Empty;
 		public string CoveredBy { get; set; } = string.Empty;
@@ -16,10 +16,10 @@
 		public double DailyPrice { get; set; } = default;
 		public string SubstitutionPlate { get; set; } = string.Empty;
 		public Vehicle? SubstitutionVehicle { get; set; }
-		public DateTime StartOn { get; set; }
+		public DateTime? StartOn { get; set; }
 		public int PlanningDay { get; set; } = default;
-		public DateTime PlanningEndOn { get; set; } = DateTime.Now;
-		public DateTime ActualEndOn { get; set; } = DateTime.Now;
+		public DateTime? PlanningEndOn { get; set; }
+		public DateTime? ActualEndOn { get; set; }
 		public TimeSpan ActualEndTime { get; set; } = default;
 		public City? City { get; set; }
 		public County? County { get; set; }

@@ -13,8 +13,8 @@ public class InsurancePolicy : BaseModel
 	public Vehicle? Vehicle { get; set; }
 	public Customer? Customer { get; set; }
 	public string PolicyNumber { get; set; } = string.Empty; //poliçe no
-	public DateTime StartDate { get; set; } = default;
-	public DateTime EndDate { get; set; } = default;
+	public DateTime? StartDate { get; set; }
+	public DateTime? EndDate { get; set; }
 	public InsuranceCompany? InsuranceCompany { get; set; }
 	public double Total { get; set; } = default;
 	//public FileData _policyDocumentData;//poliçe dosyası
@@ -23,6 +23,6 @@ public class InsurancePolicy : BaseModel
 	public int UsedRecoveryCount { get; set; } = default;
 	public double ExemptionTotal { get; set; } = default;//muafiyet tutarı
 	public double ReturnedTotal { get; set; } = default;
-	public DateTime CancelledOn { get; set; } = default;
+	public DateTime? CancelledOn { get; set; }
 	//public ApplicationUser _cancelledBy;
 }
