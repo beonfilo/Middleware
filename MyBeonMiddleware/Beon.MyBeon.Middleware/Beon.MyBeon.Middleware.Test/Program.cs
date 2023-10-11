@@ -38,7 +38,7 @@ static async void ExemplifyServiceLifetime(IServiceProvider hostProvider)
     IApplicationUserService applicationUserService = provider.GetRequiredService<IApplicationUserService>();
 
     var httpClient =new HttpClient();
-    httpClient.BaseAddress = new Uri("http://10.130.145.11:1189");
+    httpClient.BaseAddress = new Uri("http://10.130.145.11:1190");
 
     var result = await authenticationService.Authenticate(httpClient, "Admin", "1673");
     if (result.IsSuccess)
