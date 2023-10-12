@@ -14,11 +14,11 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             throw new NotImplementedException();
         }
 
-        public async Task<DataResult<T>> GetObject(HttpClient httpClient, Guid Oid)
+        public async Task<DataResult<T>> GetObject(HttpClient httpClient, Guid Oid, string query = null!)
         {
 			DataResult<T> result = new DataResult<T>();
 
-			var response = await httpClient.GetAsync($"{PostUrl}({Oid.ToString()})");
+            var response = await httpClient.GetAsync($"{PostUrl}({Oid}){query}");
 			if (response.IsSuccessStatusCode)
 			{
 				var json = await response.Content.ReadAsStringAsync();

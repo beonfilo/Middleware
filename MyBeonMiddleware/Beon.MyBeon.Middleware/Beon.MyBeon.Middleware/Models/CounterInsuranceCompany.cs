@@ -2,10 +2,10 @@
 
 namespace Beon.MyBeon.Middleware.Models
 {
-	public class CounterInsuranceCompany : BaseModel
+    public class CounterInsuranceCompany : BaseModel
 	{
-		public string Title { get; set; } = string.Empty;
-		public string Telephone { get; set; } = string.Empty;
-		public string Email { get; set; } = string.Empty;
+		public string? Title { get; set; }  
+		public string? Telephone { get; set; }  
+		public string? Email { get; set; }  
 	}
 }

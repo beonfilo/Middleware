@@ -2,9 +2,9 @@
 
 namespace Beon.MyBeon.Middleware.Models
 {
-	public class PurchaseServiceCard : BaseServiceCard
+    public class PurchaseServiceCard : BaseServiceCard
 	{
-		public string PurchaseServiceCardCardType { get; set; } = string.Empty;
+		public string? PurchaseServiceCardCardType { get; set; }  
 
 	}
 }

@@ -2,12 +2,11 @@
 
 namespace Beon.MyBeon.Middleware.Models
 {
-	public class AppointmentRejectReason : BaseModel
-	{
-
-		public DateTime CreatedOn { get; set; } = DateTime.Now;
-		//public ApplicationUser _owner;
-		public string Name { get; set; } = string.Empty;
-		public bool IsActive { get;set; } = false;
-	}
+    public class AppointmentRejectReason : BaseModel
+    { 
+        public DateTime? CreatedOn { get; set; }  
+        public ApplicationUser? Owner { get; set; }
+        public string? Name { get; set; }  
+        public bool? IsActive { get; set; }  
+    }
 }

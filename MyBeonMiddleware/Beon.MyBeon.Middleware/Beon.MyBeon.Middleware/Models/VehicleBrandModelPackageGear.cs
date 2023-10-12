@@ -6,6 +6,6 @@ namespace Beon.MyBeon.Middleware.Models
     {
         public VehicleBrandModelPackage? Package { get; set; }
         public GearType? GearType { get; set; }
-        public int GearRange { get; set; } = default;
+        public int? GearRange { get; set; }  
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace Beon.MyBeon.Middleware.Models;
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
 
-public class DamageDocumentType
+namespace Beon.MyBeon.Middleware.Models;
+
+public class DamageDocumentType : BaseModel
 {
-    public string Name { get; set; }
-    public bool IsActive { get; set; }
+    public string? Name { get; set; }
+    public bool? IsActive { get; set; }
 }

@@ -1,8 +1,10 @@
-﻿namespace Beon.MyBeon.Middleware.Models;
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
 
-public class AdvertMarketPlace
+namespace Beon.MyBeon.Middleware.Models;
+
+public class AdvertMarketPlace : BaseModel
 {
-    public string Name { get; set; }
-    public string Url { get; set; }
+    public string? Name { get; set; }
+    public string? Url { get; set; }
 
 }

@@ -10,7 +10,7 @@ public class ProtocolApproveVehicle : BaseModel
     public ContractTransaction? ContractTransaction { get; set; }
     public Contract? Contract { get; set; }
     public Customer? Customer { get; set; }
-    public int MissingDay { get; set; } = default;
-    public bool IsMissing { get; set; } = default;
+    public int? MissingDay { get; set; } 
+    public bool? IsMissing { get; set; } 
 
 }

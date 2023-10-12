@@ -4,9 +4,9 @@ namespace Beon.MyBeon.Middleware.Models;
 
 public class Department : BaseModel
 {
-    public string Code { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public bool IsActive { get; set; } = default;
-    //public ApplicationUser? Manager{get;set;}
+    public string? Code { get; set; }
+    public string? Name { get; set; }
+    public string? Description { get; set; }
+    public bool? IsActive { get; set; }
+    public ApplicationUser? Manager { get; set; }
 }

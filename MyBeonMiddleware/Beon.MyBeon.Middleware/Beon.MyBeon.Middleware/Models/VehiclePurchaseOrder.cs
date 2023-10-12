@@ -4,7 +4,7 @@ namespace Beon.MyBeon.Middleware.Models
 {
     public class VehiclePurchaseOrder : BasePurchaseOrder
     {
-        public string Status { get; set; } = string.Empty;
+        public string? Status { get; set; }  
         public Dealer? Dealer { get; set; }
     }
 }

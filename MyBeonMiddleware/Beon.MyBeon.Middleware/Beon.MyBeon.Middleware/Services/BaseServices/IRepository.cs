@@ -5,7 +5,7 @@ namespace Beon.MyBeon.Middleware.Services.BaseServices
 {
     public interface IRepository<T> where T : class
     {
-        Task<DataResult<T>> GetObject(HttpClient httpClient, Guid Oid);
+        Task<DataResult<T>> GetObject(HttpClient httpClient, Guid Oid, string query = null!);
         Task<DataResult<IEnumerable<T>>> GetObjects(HttpClient httpClient,string query = null!);
         Task<DataResult<T>> InsertObject(HttpClient httpClient, T item);
         Task<DataResult<T>> PutObject(HttpClient httpClient, T item,Guid oid);

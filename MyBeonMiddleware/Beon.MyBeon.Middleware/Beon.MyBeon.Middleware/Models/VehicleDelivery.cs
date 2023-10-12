@@ -4,10 +4,10 @@ namespace Beon.MyBeon.Middleware.Models;
 
 public class VehicleDelivery : BaseModel
 {
-    public string Status { get; set; } = string.Empty;
+    public string? Status { get; set; }  
     public DateTime? CreatedOn { get; set; }
     public ApplicationUser? Owner { get; set; }
-    public string Code { get; set; } = string.Empty;
+    public string? Code { get; set; }  
     public Customer? Customer { get; set; }
     public Contract? Contract { get; set; }
     public ContractTransaction? ContractTransaction { get; set; }
@@ -17,11 +17,11 @@ public class VehicleDelivery : BaseModel
     public VehicleBrandModel? Model { get; set; }
     public VehicleBrandModelPackage? Package { get; set; }
     public DateTime? DeliveryDate { get; set; }
-    public double DeliveryKilometer { get; set; } = default;
+    public double? DeliveryKilometer { get; set; }  
     public ApplicationUser? DelivererBy { get; set; }
     public CustomerContact? Recipient { get; set; }
     public FileData? DeliveryDocument { get; set; }
-    public double TyreChangeKilometer { get; set; } = default;
+    public double? TyreChangeKilometer { get; set; }  
     public DateTime? InvoiceStartDate { get; set; }
     public DateTime? EstimatedDeliveryDate { get; set; }
 }

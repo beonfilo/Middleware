@@ -1,9 +1,12 @@
-﻿namespace Beon.MyBeon.Middleware.Models;
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
+using System.Drawing;
 
-public class ColorType
+namespace Beon.MyBeon.Middleware.Models;
+
+public class ColorType : BaseModel
 {
-    public ColorType? Color { get; set; }
-    public string Code { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
-    public bool IsActive { get; set; } = default;
+    public Color? Color { get; set; }
+    public string? Code { get; set; } 
+    public string? Name { get; set; } 
+    public bool? IsActive { get; set; }  
 }

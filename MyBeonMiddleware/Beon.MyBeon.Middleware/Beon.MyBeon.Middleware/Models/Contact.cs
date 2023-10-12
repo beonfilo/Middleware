@@ -2,14 +2,14 @@
 
 namespace Beon.MyBeon.Middleware.Models
 {
-	public class Contact : BaseModel
+    public class Contact : BaseModel
 	{
-		public string Firstname { get; set; }  = string.Empty;
-		public string Lastname { get; set; } = string.Empty;
-		public string Tckn { get; set; } = string.Empty;
-		public string Telephone { get; set; } = string.Empty;
-		public string Email { get; set; } = string.Empty;
-		public string Address { get; set; } = string.Empty;
-		public bool IsActive { get; set; } = default;
+		public string? Firstname { get; set; }   
+		public string? Lastname { get; set; }  
+		public string? Tckn { get; set; }  
+		public string? Telephone { get; set; }  
+		public string? Email { get; set; }  
+		public string? Address { get; set; }  
+		public bool? IsActive { get; set; } = default;
 	}
 }

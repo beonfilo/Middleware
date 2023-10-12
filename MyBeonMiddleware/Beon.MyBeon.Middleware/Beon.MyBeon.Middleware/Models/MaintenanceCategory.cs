@@ -2,12 +2,12 @@
 
 namespace Beon.MyBeon.Middleware.Models
 {
-	public class MaintenanceCategory : BaseModel
+    public class MaintenanceCategory : BaseModel
 	{
-		public DateTime CreatedOn { get; set; } =DateTime.Now;
-		//public ApplicationUser _owner;
-		public string Name { get; set; } = string.Empty;
-		public double StartKilometer { get; set; } = default;
-		public double EndKilometer { get; set; } = default;
+		public DateTime? CreatedOn { get; set; } 
+		public ApplicationUser? Owner { get; set; }
+		public string? Name { get; set; } 
+		public double? StartKilometer { get; set; } 
+		public double? EndKilometer { get; set; }  
 	}
 }

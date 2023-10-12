@@ -9,7 +9,7 @@ namespace Beon.MyBeon.Middleware.Models
         public BrandModelType? ModelType { get; set; }
         public VehicleType? VehicleType { get; set; } 
         public SegmentType? SegmentType { get; set; } 
-        public double DeclarationLimit { get; set; } = default; 
-        public bool IsActive { get; set; } = default;
+        public double? DeclarationLimit { get; set; }  
+        public bool? IsActive { get; set; }  
     }
 }

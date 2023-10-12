@@ -4,8 +4,8 @@ namespace Beon.MyBeon.Middleware.Models;
 
 public class ProtocolApprove : BaseModel
 {
-    public string Status { get; set; } = string.Empty;
-    public string ProtocolApproveType { get; set; } = string.Empty;
+    public string? Status { get; set; }  
+    public string? ProtocolApproveType { get; set; }  
     public Customer? Customer { get; set; }
     public CustomerContact? CustomerContact { get; set; }
     public DateTime? CreatedOn { get; set; }
@@ -18,7 +18,7 @@ public class ProtocolApprove : BaseModel
     public DateTime? RejectionOn { get; set; }
     public ApplicationUser? RejectionBy { get; set; }
     public DateTime? ProtocolApproveOn { get; set; }
-    public string DevirContractType { get; set; } = string.Empty;
+    public string? DevirContractType { get; set; }  
     public Contract? DevirContract { get; set; }
     public Contract? NewContract { get; set; }
 

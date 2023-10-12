@@ -8,6 +8,6 @@ namespace Beon.MyBeon.Middleware.Models
         public VehicleBrandModel? Model { get; set; }
         public VehicleBrandModelPackage? Package { get; set; }
         public VehicleBrandModelPackageYear? ModelYear { get; set; }
-        public bool IsActive { get; set; } = default;
+        public bool? IsActive { get; set; }
     }
 }
