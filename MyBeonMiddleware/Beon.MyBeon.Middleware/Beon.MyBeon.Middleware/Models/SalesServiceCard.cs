@@ -4,6 +4,6 @@ namespace Beon.MyBeon.Middleware.Models
 {
 	public class SalesServiceCard : BaseServiceCard
 	{
-		public string SalesServiceCardCardType { get; set; } = string.Empty;
+		public string? SalesServiceCardCardType { get; set; }  
 	}
 }

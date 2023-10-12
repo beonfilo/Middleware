@@ -5,17 +5,17 @@ namespace Beon.MyBeon.Middleware.Models;
 public class ContractTransactionVehiclePayment : BaseModel
 {
 	public ContractTransactionVehicle? ContractTransactionVehicle { get; set; }
-	public string ContractTransactionVehiclePaymentInvoiceStatus { get; set; } = string.Empty;
-	public int InstallmentNumber { get; set; } = default;
-	public DateTime StartDate { get; set; }
-	public DateTime EndDate { get; set; } 
-	public DateTime InstallmentDate { get; set; }
-	public int Year { get; set; } = default;
-	public int Month { get; set; } = default;
-	public double Total { get; set; } = default;
-	public double TotalVat { get; set; } = default;
-	public double NetTotal { get; set; } = default;
-	public int TotalDay { get; set; } = default;
-	public double DailyPrice { get; set; } = default;
+	public string? InvoiceStatus { get; set; } 
+	public int? InstallmentNumber { get; set; }  
+	public DateTime? StartDate { get; set; }
+	public DateTime? EndDate { get; set; } 
+	public DateTime? InstallmentDate { get; set; }
+	public int? Year { get; set; }   
+	public int? Month { get; set; } 
+	public double? Total { get; set; } 
+	public double? TotalVat { get; set; } 
+	public double? NetTotal { get; set; } 
+	public int? TotalDay { get; set; } 
+	public double? DailyPrice { get; set; }  
 	public RentalFeeTransaction? RentalFeeTransaction { get; set; }
 }

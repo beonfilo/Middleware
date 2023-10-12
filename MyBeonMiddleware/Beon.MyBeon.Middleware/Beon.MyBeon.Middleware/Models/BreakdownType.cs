@@ -1,8 +1,10 @@
-﻿namespace Beon.MyBeon.Middleware.Models;
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
 
-public class BreakdownType
+namespace Beon.MyBeon.Middleware.Models;
+
+public class BreakdownType : BaseModel
 {
-    public  BreakdownType?  BreakdownLocation { get; set; }
-    public BreakdownType? Session { get; set; }
+    public BreakdownType? BreakdownLocation { get; set; }
+    public string? Name { get; set; }
 
 }

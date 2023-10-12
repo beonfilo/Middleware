@@ -4,9 +4,8 @@ namespace Beon.MyBeon.Middleware.Models
 {
     public class Unitset : BaseModel
     {
-        //public int _referenceId;
-        public string Code { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
-       // public IntegrationResult _integrationResult;
+        public string? Code { get; set; }
+        public string? Name { get; set; }
+        public string? IntegrationResult { get; set; }
     }
 }

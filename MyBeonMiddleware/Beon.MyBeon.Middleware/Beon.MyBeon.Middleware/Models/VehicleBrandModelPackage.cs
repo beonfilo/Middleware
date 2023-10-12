@@ -12,21 +12,21 @@ namespace Beon.MyBeon.Middleware.Models
         public MotorHorsePowerType? HorsePowerType { get; set; } 
         public FuelType? FuelType { get; set; }
         public BodyType? BodyType { get; set; }
-        public byte[]? frontView { get; set; }
+        public byte[]? FrontView { get; set; }
         public byte[]? BackView { get; set; } 
-        public int Width { get; set; } = default;
-        public int Height { get; set; } = default;
-        public int Length { get; set; } = default;
-        public int TrunkVolume { get; set; } = default;
-        public int FuelTankVolume { get; set; } = default;
-        public int NumberOfSeats { get; set; } = default;
-        public int NumberOfDoors { get; set; } = default;
-        public int Weight { get; set; } = default;
-        public int WheelBase { get; set; } = default;
+        public int? Width { get; set; }  
+        public int? Height { get; set; }  
+        public int? Length { get; set; }  
+        public int? TrunkVolume { get; set; }  
+        public int? FuelTankVolume { get; set; }  
+        public int? NumberOfSeats { get; set; }  
+        public int? NumberOfDoors { get; set; }  
+        public int? Weight { get; set; }  
+        public int? WheelBase { get; set; }  
         public TractionSystemType? TractionSystemType { get; set; }
-        public double UrbanFuelConsumption { get; set; } = default;
-        public double ExtraUrbanFuelConsumption { get; set; } = default;
-        public double AverageFuelConsumption { get; set; } = default;
+        public double? UrbanFuelConsumption { get; set; }  
+        public double? ExtraUrbanFuelConsumption { get; set; }  
+        public double? AverageFuelConsumption { get; set; }  
         public GearType? GearType { get; set; } 
 
     }

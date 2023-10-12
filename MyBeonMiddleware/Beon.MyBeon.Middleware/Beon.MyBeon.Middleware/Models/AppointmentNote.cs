@@ -2,4 +2,5 @@
 
 public class AppointmentNote :BaseNote
 {
+    public BaseAppointment? BaseAppointment { get; set; }
 }

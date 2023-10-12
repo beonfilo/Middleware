@@ -1,6 +1,8 @@
-﻿namespace Beon.MyBeon.Middleware.Models
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
+
+namespace Beon.MyBeon.Middleware.Models
 {
-    public class Notification : BaseObject
+    public class Notification : BaseModel
     {
         public string? Title { get; set; }
         public string? Description { get; set; }

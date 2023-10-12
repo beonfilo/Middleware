@@ -1,9 +1,11 @@
-﻿namespace Beon.MyBeon.Middleware.Models;
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
 
-public class DamageDemandContact
+namespace Beon.MyBeon.Middleware.Models;
+
+public class DamageDemandContact : BaseModel
 {
     public DamageDemand? Demand{ get; set; }
-    public int LineNumber { get; set; } = default;
+    public int? LineNumber { get; set; }  
     public  Contact? Concant { get; set; }
-    public string Plate { get; set; } = string.Empty;
+    public string? Plate { get; set; } 
 }

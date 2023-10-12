@@ -1,9 +1,11 @@
-﻿namespace Beon.MyBeon.Middleware.Models;
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
 
-public class CleaningType
+namespace Beon.MyBeon.Middleware.Models;
+
+public class CleaningType : BaseModel
 {
-    public DateTime CreatedOn { get; set; }
+    public DateTime? CreatedOn { get; set; }
     public ApplicationUser? Owner { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public bool IsActive { get; set; } = default;
+    public string? Name { get; set; } 
+    public bool? IsActive { get; set; }   
 }

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Beon.MyBeon.Middleware.Models.BaseModels;
 
 namespace Beon.MyBeon.Middleware.Models
 {
-    internal class HardwareTemplateComfort
+    public class HardwareTemplateComfort : BaseModel
     {
+        public HardwareTemplate? HardwareTemplate { get; set; }
+        public ComfortType? ComfortType { get; set; }
+        public string? HardwareStatus { get; set; }
     }
 }

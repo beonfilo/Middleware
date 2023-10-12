@@ -8,8 +8,8 @@ namespace Beon.MyBeon.Middleware.Models
         public VehicleBrandModel? Model { get; set; }
         public VehicleBrandModelPackage? Package { get; set; }
         public VehicleBrandModelPackageYear? Year { get; set; }
-        public double Coefficient { get; set; } = default;//katsayı
-        public double PurchasePrice { get; set; } = default;//satınalma fiyatı
-        public double ValueOfvehicleInsurance { get; set; } = default;//kasko değeri
+        public double? Coefficient { get; set; } //katsayı
+        public double? PurchasePrice { get; set; } //satınalma fiyatı
+        public double? ValueOfvehicleInsurance { get; set; } //kasko değeri
     }
 }

@@ -4,7 +4,7 @@ namespace Beon.MyBeon.Middleware.Models
 {
     public class LeadContact : BaseModel
     {
-        public Lead? Lead { get; set; } 
-        public bool IsPrivatePerson { get; set; } = default;
+        public Lead? Lead { get; set; }
+        public bool? IsPrivatePerson { get; set; }
     }
 }
