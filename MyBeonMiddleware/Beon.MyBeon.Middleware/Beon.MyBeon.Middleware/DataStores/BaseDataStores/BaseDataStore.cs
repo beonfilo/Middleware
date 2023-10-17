@@ -80,7 +80,7 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
             return await Task.FromResult(result);
         }
 
-        public async Task<DataResult<T>> InsertObject(HttpClient httpClient, T item)
+        public async Task<DataResult<T>> InsertObject(HttpClient httpClient, object item)
         {
             DataResult<T> result = new DataResult<T>();
 
@@ -91,7 +91,7 @@ namespace Beon.MyBeon.Middleware.DataStores.BaseDataStores
                 var json = await response.Content.ReadAsStringAsync();
                 if (!string.IsNullOrEmpty(json))
                 {
-                    var data = JsonNode.Parse(json)["value"].Deserialize<T>();
+                    var data = JsonNode.Parse(json).Deserialize<T>();
                     result.IsSuccess = true;
                     result.Message = "Success";
                     result.Data = data;
