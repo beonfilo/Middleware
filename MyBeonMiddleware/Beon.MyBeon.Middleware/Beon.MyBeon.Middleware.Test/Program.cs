@@ -1,4 +1,5 @@
 ﻿using Beon.MyBeon.Middleware.DataStores;
+using Beon.MyBeon.Middleware.DTOs;
 using Beon.MyBeon.Middleware.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +20,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
         services.AddTransient<IPositionService, PositionDataStore>();
         services.AddTransient<IApplicationUserService, ApplicationUserDataStore>();
         services.AddTransient<IVehicleViewService,VehicleViewDataStore>();
+        services.AddTransient<IMaintenanceDemandService, MaintenanceDemandDataStore>();
+
 
 
     })
@@ -35,7 +38,7 @@ static async void ExemplifyServiceLifetime(IServiceProvider hostProvider)
     
     IAuthenticationService authenticationService = provider.GetRequiredService<IAuthenticationService>();
     IApplicationUserService applicationUserService = provider.GetRequiredService<IApplicationUserService>();
-    IVehicleViewService vehicleViewService = provider.GetRequiredService<IVehicleViewService>();
+    IMaintenanceDemandService vehicleViewService = provider.GetRequiredService<IMaintenanceDemandService>();
 
     var httpClient =new HttpClient();
     httpClient.BaseAddress = new Uri("http://10.130.145.11:1190");
@@ -44,8 +47,11 @@ static async void ExemplifyServiceLifetime(IServiceProvider hostProvider)
     if (result.IsSuccess)
     {
         httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", result.Data.Token);
-        Guid oid = new Guid("2f59056c-9606-42b3-b054-638c9cb81b3f");
-        var deneme = await applicationUserService.GetObject(httpClient, oid,$"?$expand=Customer");
+        var model = new MaintenanceDemandDTO(1000
+            ,null,null,null,null,null,null,null,null,null);
+        
+
+        var deneme = await vehicleViewService.InsertObject(httpClient,model);
         Debug.WriteLine(deneme);
 
     }
