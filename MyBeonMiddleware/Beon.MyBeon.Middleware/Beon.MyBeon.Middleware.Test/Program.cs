@@ -21,6 +21,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
         services.AddTransient<IApplicationUserService, ApplicationUserDataStore>();
         services.AddTransient<IVehicleViewService,VehicleViewDataStore>();
         services.AddTransient<IMaintenanceDemandService, MaintenanceDemandDataStore>();
+        services.AddTransient<ITollFeeService, TollFeeDataStore>();
+
 
 
 
@@ -39,6 +41,7 @@ static async void ExemplifyServiceLifetime(IServiceProvider hostProvider)
     IAuthenticationService authenticationService = provider.GetRequiredService<IAuthenticationService>();
     IApplicationUserService applicationUserService = provider.GetRequiredService<IApplicationUserService>();
     IMaintenanceDemandService vehicleViewService = provider.GetRequiredService<IMaintenanceDemandService>();
+    ITollFeeService tollFeeService = provider.GetRequiredService<ITollFeeService>();
 
     var httpClient =new HttpClient();
     httpClient.BaseAddress = new Uri("http://10.130.145.11:1190");
@@ -47,11 +50,20 @@ static async void ExemplifyServiceLifetime(IServiceProvider hostProvider)
     if (result.IsSuccess)
     {
         httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", result.Data.Token);
-        var model = new MaintenanceDemandDTO(1000
-            ,null,null,null,null,null,null,null,null,null);
+        var model = new TollFeeDTO
+        {
+            EntryDate = DateTime.Now,
+            EntryTollPointDesc = "",
+            ExitDate = DateTime.Now,
+            ExitTollPointDesc = "",
+            TollNumberDesc = "0",
+            Roadway = null,
+            Vehicle = null
+        
+        };
         
 
-        var deneme = await vehicleViewService.InsertObject(httpClient,model);
+        var deneme = await tollFeeService.InsertObject(httpClient,model);
         Debug.WriteLine(deneme);
 
     }
