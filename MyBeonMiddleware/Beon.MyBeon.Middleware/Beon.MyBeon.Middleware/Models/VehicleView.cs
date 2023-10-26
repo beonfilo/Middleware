@@ -1,9 +1,8 @@
-﻿using Beon.MyBeon.Middleware.Models.BaseModels;
-
-namespace Beon.MyBeon.Middleware.Models
+﻿namespace Beon.MyBeon.Middleware.Models
 {
-    public class VehicleView : BaseModel
+    public class VehicleView
     {
+        public Guid? Oid { get; set; }
         public string? Status { get; set; }
         public string? Plate { get; set; }
         public Guid? CustomerOid { get; set; }
@@ -26,5 +25,33 @@ namespace Beon.MyBeon.Middleware.Models
         public string? GearType { get; set; }
         public string? Color { get; set; }
         public bool? IsActive { get; set; }
+        public string? ReservationType { get; set; }
+        public DateTime? FirstRegistrationDate { get; set; }
+        public DateTime? LastRegistrationDate { get; set; }
+        public string? EngineNumber { get; set; }
+        public string? ChassisNumber { get; set; }
+        public string? UsageType { get; set; }
+        public string? SegmentType { get; set; }
+        public string? DocumentSerialNumber { get; set; }
+        public string? ContractNumber { get; set; }
+        public DateTime? InspectionDate { get; set; }
+        public DateTime? InsurancePolicyExpiryDate { get; set; }
+        public DateTime? PolicyExpiryDate { get; set; }
+        public double? InsurancePolicyPrice { get; set; }
+        public string? LeasingCompany { get; set; }
+        public DateTime? BankCreditEndOn { get; set; }
+        public string? StockLocation { get; set; }
+        public string? Dealer { get; set; }
+        public DateTime? ReservationDate { get; set; }
+        public string? ReservationCustomer { get; set; }
+        public string? VehicleType { get; set; }
+        public string? RegistrationNumber { get; set; }
+        public string? City { get; set; }
+        public string? County { get; set; }
+        public string? Bank { get; set; }
+        public string? BankCreditNumber { get; set; }
+        public int? BankCreditReferenceId { get; set; }
+        public DateTime? BankCreditStartOn { get; set; }
+        public int? BankCreditMaturity { get; set; }
     }
 }
