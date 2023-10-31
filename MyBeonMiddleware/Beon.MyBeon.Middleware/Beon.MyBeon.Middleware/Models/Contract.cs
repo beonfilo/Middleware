@@ -28,7 +28,7 @@ public class Contract : BaseModel
 			{
 				case "SignatureState":
 					return "İmza Aşamasında";
-				case "IsValid ":
+				case "IsValid":
 					return "Yürürlükte";
 				case "Abrogated":
 					return "Feshedildi";
