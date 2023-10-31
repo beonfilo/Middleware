@@ -4,8 +4,32 @@ namespace Beon.MyBeon.Middleware.Models
 {
     public class Order : BaseModel
     {
-        public string? Status { get; set; } 
-        public DateTime? CreatedOn { get; set; }
+        public string? Status { get; set; }
+		public string StatusName
+		{
+			get
+			{
+
+				switch (Status)
+				{
+					case "Waiting":
+						return "Bekliyor";
+					case "Approved":
+						return "Onaylandı";
+					case "Rejected":
+						return "Reddedildi";
+					case "WaitingForVehicleDelivery":
+						return "Teslim Bekliyor";
+					case "VehicleDeliveried":
+						return "Teslim Edildi";
+					case "ContractCreated":
+						return "Sözleşme Oluşturuldu";
+					default:
+						return "Diğer";
+				}
+			}
+		}
+		public DateTime? CreatedOn { get; set; }
         public ApplicationUser? Owner { get; set; }
         public string? Code { get; set; } 
         public Customer? Customer { get; set; }
