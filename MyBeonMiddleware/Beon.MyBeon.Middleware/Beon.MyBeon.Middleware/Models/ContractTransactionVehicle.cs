@@ -28,7 +28,7 @@ public class ContractTransactionVehicle : BaseModel
     public double? Kilometer { get; set; }
     public int? Month { get; set; }
     public int? TotalDay { get; set; }
-    public string VatType { get; set; }
+    public string? VatType { get; set; }
     public int? VatRate { get; set; }
     public double? Total { get; set; }
     public double? TotalDiscount { get; set; }
