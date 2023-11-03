@@ -17,7 +17,7 @@ public class BaseFollowUpTransaction : BaseModel
     public double Total { get; set; } = default;
     public string ChargeoutStatus { get; set; } = string.Empty;
     public double ChargeoutPrice { get; set; }
-    //public FileData _chargeoutDocumentData;//yanıtma Belgesi 
+    public FileData? ChargeoutDocumentData { get; set; };//yanıtma Belgesi 
     public string Description { get; set; } = string.Empty;
     public BaseInvoicePool? BaseInvoicePool { get; set; }
 	public DateTime? ChargeoutOn { get; set; }
