@@ -4,7 +4,7 @@ namespace Beon.MyBeon.Middleware.Models
 {
     public class VehiclePurchaseInfo : BaseModel
     {
-        public ApplicationUser Owner { get; set; }
+        public ApplicationUser? Owner { get; set; }
         public DateTime? CreatedOn { get; set; }
         public int? ReferenceId { get; set; }  
         public Vehicle? Vehicle { get; set; }

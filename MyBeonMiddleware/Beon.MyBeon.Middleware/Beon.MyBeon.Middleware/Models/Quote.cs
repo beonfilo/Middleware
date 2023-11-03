@@ -5,7 +5,7 @@ namespace Beon.MyBeon.Middleware.Models
     public class Quote : BaseModel
     {
         public DateTime? CreatedOn { get; set; }
-        public ApplicationUser Owner { get; set; }
+        public ApplicationUser? Owner { get; set; }
         public string? Status { get; set; }
         public string? Code { get; set; }
         public QuoteRevision? QuoteRevision { get; set; }
