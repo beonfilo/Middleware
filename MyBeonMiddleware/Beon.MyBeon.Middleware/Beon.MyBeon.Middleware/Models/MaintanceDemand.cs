@@ -16,10 +16,12 @@ namespace Beon.MyBeon.Middleware.Models
 
 				switch (MaintenanceType)
 				{
-					case "PeriodicMaintenance":
+					case "Periodic":
 						return "Periyodik Bakım";
-					case "BreakdownMaintenance":
-						return "Arızi Bakım";
+					case "Breakdown":
+						return "Arıza Bakım";
+					case "PeriodicAndBreakdown":
+						return "Periyodik ve Arıza Bakım";
 					default:
 						return "Diğer";
 				}
