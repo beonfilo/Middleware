@@ -1,4 +1,5 @@
 ﻿using Beon.MyBeon.Middleware.Models.BaseModels;
+using System.Text.Json.Serialization;
 
 namespace Beon.MyBeon.Middleware.Models
 {
@@ -10,6 +11,7 @@ namespace Beon.MyBeon.Middleware.Models
         public double? DefectRate { get; set; } // kusur oranı
         public string? DamageCause { get; set; }
         public DateTime? DamageDate { get; set; } //hasar tarihi
+        [JsonIgnore]
         public TimeSpan? DamageTime { get; set; } //hasar saati
         public City? City { get; set; }
         public County? County { get; set; }

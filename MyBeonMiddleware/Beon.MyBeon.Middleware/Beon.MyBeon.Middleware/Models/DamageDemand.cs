@@ -6,7 +6,25 @@ namespace Beon.MyBeon.Middleware.Models
     public class DamageDemand : BaseModel
     {
         public string? Status { get; set; }
-        public DateTime? CreatedOn { get; set; }
+		public string StatusName
+		{
+			get
+			{
+
+				switch (Status)
+				{
+					case "Waiting":
+						return "Bekliyor";
+					case "CreateWorkOrder":
+						return "Onarım Başladı";
+					case "Completed":
+						return "Tamamlandı";
+					default:
+						return "Diğer";
+				}
+			}
+		}
+		public DateTime? CreatedOn { get; set; }
         public ApplicationUser? Owner { get; set; }
         public string? Code { get; set; }
         public Vehicle? Vehicle { get; set; }
