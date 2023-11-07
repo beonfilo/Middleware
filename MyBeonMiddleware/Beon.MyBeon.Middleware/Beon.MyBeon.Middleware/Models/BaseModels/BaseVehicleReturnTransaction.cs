@@ -1,4 +1,6 @@
-﻿namespace Beon.MyBeon.Middleware.Models.BaseModels
+﻿using System.Text.Json.Serialization;
+
+namespace Beon.MyBeon.Middleware.Models.BaseModels
 {
 	public class BaseVehicleReturnTransaction : BaseModel
 	{
@@ -8,6 +10,8 @@
 		public string? Code { get; set; }
 
 		public DateTime? ReturnDate { get; set; }
+
+		[JsonIgnore]
 		public TimeSpan? ReturnTime { get; set; }
 		public double? ReturnKilometer { get; set; }
 		public ApplicationUser? ReturnedBy { get; set; }
