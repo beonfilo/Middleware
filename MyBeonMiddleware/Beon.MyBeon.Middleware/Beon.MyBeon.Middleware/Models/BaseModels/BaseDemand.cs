@@ -4,6 +4,32 @@
 	{
 		public string DemandType { get; set; } = string.Empty;
 		public string Status { get; set; } = string.Empty;
+		public string StatusName
+		{
+			get
+			{
+
+				switch (Status)
+				{
+					case "Waiting":
+						return "Bekliyor";
+					case "AppointmentCreated":
+						return "Randevu Alındı";
+					case "ProformaCreated":
+						return "Proforma Oluşturuldu";
+					case "WorkOrderCreated":
+						return "İş Emri Verildi";
+					case "Canceled":
+						return "İptal Edildi";
+					case "Completed":
+						return "Tamamlandı";
+					case "DossierCreated":
+						return "Dosya Oluşturuldu";
+					default:
+						return "Diğer";
+				}
+			}
+		}
 		public DateTime? CreatedOn { get; set; }
 		//public ApplicationUser _owner;
 		public BaseAppointment? BaseAppointment { get; set; }

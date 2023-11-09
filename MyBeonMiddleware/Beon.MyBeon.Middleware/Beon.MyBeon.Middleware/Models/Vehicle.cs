@@ -22,7 +22,7 @@
         public GearType? GearType { get; set; }
         public string? ChassisNumber { get; set; }  
         public string? EngineNumber { get; set; }  
-        public string? LicenceDocument { get; set; }  
+        
         #region Ruhsat Bilgileri
         public string? DocumentSerialNumber { get; set; }
         public City? City { get; set; }
@@ -60,8 +60,8 @@
         public DateTime? LastMaintenanceDate { get; set; } //son bakım tarihi
         public Dealer? Dealer { get; set; } 
         public StockLocation? StockLocation { get; set; }
-
-        public string? UsageType { get; set; }  
+		public FileData? LicenceDocument { get; set; }
+		public string? UsageType { get; set; }  
         public string? Kdocument { get; set; }  //k belgesi ticari araçlar için zorunlu
         public string? VehicleTollFeeStatus { get; set; }  //hgsyi kim öder var:BEONi yok: Müşteri (Enum)
         public bool? IsMarketable { get; set; } //satılabilir
