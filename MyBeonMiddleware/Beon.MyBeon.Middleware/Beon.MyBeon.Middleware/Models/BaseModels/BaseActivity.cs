@@ -3,6 +3,6 @@
 	public class BaseActivity
 	{
 		public string BaseActivityType { get; set; } = string.Empty;
-
+		public DateTime StartOn { get; set; }
 	}
 }
