@@ -22,11 +22,13 @@ using IHost host = Host.CreateDefaultBuilder(args)
         services.AddTransient<IVehicleViewService,VehicleViewDataStore>();
         services.AddTransient<IMaintenanceDemandService, MaintenanceDemandDataStore>();
         services.AddTransient<ITollFeeService, TollFeeDataStore>();
+		services.AddTransient<IVehicleViewService, VehicleViewDataStore>();
 
 
 
 
-    })
+
+	})
     .Build();
 
 ExemplifyServiceLifetime(host.Services);
@@ -40,33 +42,19 @@ static async void ExemplifyServiceLifetime(IServiceProvider hostProvider)
     
     IAuthenticationService authenticationService = provider.GetRequiredService<IAuthenticationService>();
     IApplicationUserService applicationUserService = provider.GetRequiredService<IApplicationUserService>();
-    IMaintenanceDemandService vehicleViewService = provider.GetRequiredService<IMaintenanceDemandService>();
+	IVehicleViewService vehicleViewService = provider.GetRequiredService<IVehicleViewService>();
     ITollFeeService tollFeeService = provider.GetRequiredService<ITollFeeService>();
 
-    var httpClient =new HttpClient();
+    var httpClient = new HttpClient();
     httpClient.BaseAddress = new Uri("http://10.130.145.11:1190");
 
     var result = await authenticationService.Authenticate(httpClient, "Admin", "1673");
     if (result.IsSuccess)
-    {
-        httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", result.Data.Token);
-        var model = new TollFeeDTO
-        {
-            EntryDate = DateTime.Now,
-            EntryTollPointDesc = "",
-            ExitDate = DateTime.Now,
-            ExitTollPointDesc = "",
-            TollNumberDesc = "0",
-            Roadway = null,
-            Vehicle = null
-        
-        };
-        
+	{
+		httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", result.Data.Token);
 
-        var deneme = await tollFeeService.InsertObject(httpClient,model);
-        Debug.WriteLine(deneme);
+		var vehicleResult = await vehicleViewService.GetObjects(httpClient, "?$top=1");
 
-    }
-   
+	}
 
 }

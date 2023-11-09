@@ -53,5 +53,6 @@
         public int? BankCreditReferenceId { get; set; }
         public DateTime? BankCreditStartOn { get; set; }
         public int? BankCreditMaturity { get; set; }
+        public byte[]? BrandImage { get; set; }
     }
 }
