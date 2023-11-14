@@ -28,7 +28,8 @@ namespace Beon.MyBeon.Middleware.Models
 			}
 		}
 		public PeriodicMaintenanceParameter? PeriodicMaintenanceParameter { get; set; }
-		public double? Kilometer { get; set; }  
+        public DateTime AppointmentDate{ get; set; }
+        public double? Kilometer { get; set; }  
 		public MaintenanceCategory? MaintenanceCategory { get; set; }
 		public AuthorizedServiceShop? DemandedServiceShop { get; set; }
 		public AuthorizedServiceShopBranch? DemandedServiceShopBranch { get; set; }
