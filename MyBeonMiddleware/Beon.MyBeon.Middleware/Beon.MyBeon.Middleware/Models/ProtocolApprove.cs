@@ -13,7 +13,7 @@ public class ProtocolApprove : BaseModel
 			switch (ProtocolApproveType)
 			{
 				case "CustomerDevir":
-					return "Müşteri Devir Protokolü";
+					return "Müşteri Devir";
 				default:
 					return "Diğer";
 			}
