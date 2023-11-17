@@ -7,7 +7,8 @@
         public string? Plate { get; set; }
         public Guid? CustomerOid { get; set; }
         public string? Customer { get; set; }
-        public string? ParentCustomer { get; set; }
+		public string? VehicleUser { get; set; }
+		public string? ParentCustomer { get; set; }
         public DateTime? InvoiceStartDate { get; set; }
         public DateTime? InvoiceEndDate { get; set; }
         public double? UnitPrice { get; set; }

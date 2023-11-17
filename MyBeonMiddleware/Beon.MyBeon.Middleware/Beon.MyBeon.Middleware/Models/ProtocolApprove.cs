@@ -5,8 +5,21 @@ namespace Beon.MyBeon.Middleware.Models;
 public class ProtocolApprove : BaseModel
 {
     public string? Status { get; set; }  
-    public string? ProtocolApproveType { get; set; }  
-    public Customer? Customer { get; set; }
+    public string? ProtocolApproveType { get; set; }
+	public string ProtocolApproveTypeName
+	{
+		get
+		{
+			switch (ProtocolApproveType)
+			{
+				case "CustomerDevir":
+					return "Müşteri Devir Protokolü";
+				default:
+					return "Diğer";
+			}
+		}
+	}
+	public Customer? Customer { get; set; }
     public CustomerContact? CustomerContact { get; set; }
     public DateTime? CreatedOn { get; set; }
     public DateTime? ProtocolOn { get; set; }
