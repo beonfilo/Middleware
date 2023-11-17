@@ -5,7 +5,7 @@ namespace Beon.MyBeon.Middleware.Models.BaseModels;
 public class BaseContact : BaseModel
 {
     public string Name { get; set; } = string.Empty;
-    public string LastName { get; set; } = string.Empty;
+    public string Lastname { get; set; } = string.Empty;
     public string Position { get; set; } = string.Empty;
     public string Telephone { get; set; } = string.Empty;
     public string OtherTelephone { get; set; } = string.Empty;
