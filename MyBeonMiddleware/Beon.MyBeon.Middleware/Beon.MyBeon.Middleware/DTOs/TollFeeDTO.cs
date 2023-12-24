@@ -18,6 +18,7 @@ namespace Beon.MyBeon.Middleware.DTOs
 		public Guid? Customer { get; set; }
 		public double ChargeoutPrice { get; set; } = 0;
 		public int? ChargeoutStatus { get; set; } = 1;
+		public double Total { get; set; } = default;
 
-	}
+    }
 }
