@@ -13,8 +13,8 @@ public class TollFee : BaseFollowUpTransaction
 	public string? EntryTollPointDesc { get; set; }  
 	public string? ExitTollPointDesc { get; set; }  
 	public City? ExitCity { get; set; }
-    public DateTime? EntryDate { get; set; }
-    public DateTime? ExitDate{ get; set; }
+    public DateTimeOffset? EntryDate { get; set; }
+    public DateTimeOffset? ExitDate{ get; set; }
     public Roadway? Roadway { get; set; }
 	public string? RoadWayDesc { get; set; }  
 	public string? TollFeeInvoicePool { get; set; }

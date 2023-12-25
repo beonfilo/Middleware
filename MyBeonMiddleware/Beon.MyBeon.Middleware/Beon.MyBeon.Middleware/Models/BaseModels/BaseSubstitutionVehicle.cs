@@ -20,7 +20,6 @@
 		public int PlanningDay { get; set; } = default;
 		public DateTime? PlanningEndOn { get; set; }
 		public DateTime? ActualEndOn { get; set; }
-		public TimeSpan ActualEndTime { get; set; } = default;
 		public City? City { get; set; }
 		public County? County { get; set; }
 		public string Description { get; set; } = string.Empty;
