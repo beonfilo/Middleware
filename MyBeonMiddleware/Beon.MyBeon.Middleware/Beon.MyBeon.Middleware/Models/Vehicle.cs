@@ -70,6 +70,9 @@
         public int? SalesInvoiceReferenceId { get; set; } 
         public ContractTransactionVehicle? ContractTransactionVehicle { get; set; }
         public DateTime? CertificatefOfAuthExpiryDate { get; set; }
-        public VehiclePurchaseOrderLine? VehiclePurchaseOrderLine { get; set; } 
+        public VehiclePurchaseOrderLine? VehiclePurchaseOrderLine { get; set; }
+        public Guid VehicleInsurancePolicy { get; set; }
+        public Guid InsurancePolicy { get; set; }
+
     }
 }
