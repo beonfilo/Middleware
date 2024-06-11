@@ -17,5 +17,6 @@ public class ApplicationUser : BaseModel
     public string? UserName { get; set; }
     public string? StoredPassword { get; set; }
     public Customer? Customer { get; set; }
-    public CustomerContact? CustomerContact { get; set; }
+    public bool? ChangePasswordOnFirstLogon { get; set; }
+	public CustomerContact? CustomerContact { get; set; }
 }

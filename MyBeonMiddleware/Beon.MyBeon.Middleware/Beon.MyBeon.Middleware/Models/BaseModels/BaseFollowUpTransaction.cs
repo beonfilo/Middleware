@@ -21,4 +21,7 @@ public class BaseFollowUpTransaction : BaseModel
     public string Description { get; set; } = string.Empty;
     public BaseInvoicePool? BaseInvoicePool { get; set; }
 	public DateTime? ChargeoutOn { get; set; }
+
+
+
 }
